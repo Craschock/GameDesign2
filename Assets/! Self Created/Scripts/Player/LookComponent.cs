@@ -14,6 +14,7 @@ public class LookComponent : MonoBehaviour
     [SerializeField] private InputActionReference lookAction;
 
     private float _xRotation = 0f;
+    private bool _canLook = true;
 
     private void Start()
     {
@@ -25,11 +26,13 @@ public class LookComponent : MonoBehaviour
     private void OnEnable()  // Enable Input
     {
         if (lookAction != null) lookAction.action.Enable();
+        DementiaBookManager.OnUIStateChanged += HandleUIStateChange;
     }
 
     private void OnDisable()  // Disable Input
     {
         if (lookAction != null) lookAction.action.Disable();
+        DementiaBookManager.OnUIStateChanged -= HandleUIStateChange;
     }
 
     private void Update()
@@ -37,9 +40,15 @@ public class LookComponent : MonoBehaviour
         HandleLook();
     }
 
+    private void HandleUIStateChange(bool isUIOpen)
+    {
+        // Essantially: UI is open, no look. UI is closed, can look
+        _canLook = !isUIOpen;
+    }
+
     private void HandleLook()
     {
-        if (lookAction == null || playerCamera == null) return;
+        if (!_canLook || lookAction == null || playerCamera == null) return;
 
         // Read the delta movement from the mouse
         Vector2 lookInput = lookAction.action.ReadValue<Vector2>();
