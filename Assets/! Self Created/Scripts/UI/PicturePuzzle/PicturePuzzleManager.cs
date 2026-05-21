@@ -193,6 +193,6 @@ public class PicturePuzzleManager : MonoBehaviour
     *   und halt den rest ig
     */
 
-        ClosePuzzle();
+    //    ClosePuzzle();
     }
 }
