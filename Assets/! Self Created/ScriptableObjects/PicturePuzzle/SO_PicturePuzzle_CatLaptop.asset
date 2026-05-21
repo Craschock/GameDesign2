@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4de563b2cd993f4b817a294f7d0ec6c, type: 3}
+  m_Name: SO_PicturePuzzle_CatLaptop
+  m_EditorClassIdentifier: Assembly-CSharp::PicturePuzzleSO
+  scrambleSeed: 42
+  cellSize: {x: 300, y: 200}
+  columns: 4
+  pieces:
+  - pieceSprite: {fileID: -1962658606, guid: 21db599333f886846a9194fad2201a00, type: 3}
+  - pieceSprite: {fileID: -2116741313, guid: 21db599333f886846a9194fad2201a00, type: 3}
+  - pieceSprite: {fileID: -755024057, guid: 21db599333f886846a9194fad2201a00, type: 3}
+  - pieceSprite: {fileID: -36866153, guid: 21db599333f886846a9194fad2201a00, type: 3}
+  - pieceSprite: {fileID: -1773737743, guid: 21db599333f886846a9194fad2201a00, type: 3}
+  - pieceSprite: {fileID: -1150242725, guid: 21db599333f886846a9194fad2201a00, type: 3}
+  - pieceSprite: {fileID: 1393722467, guid: 21db599333f886846a9194fad2201a00, type: 3}
+  - pieceSprite: {fileID: -1784793729, guid: 21db599333f886846a9194fad2201a00, type: 3}
+  - pieceSprite: {fileID: 759842708, guid: 21db599333f886846a9194fad2201a00, type: 3}
+  - pieceSprite: {fileID: -1248151489, guid: 21db599333f886846a9194fad2201a00, type: 3}
+  - pieceSprite: {fileID: -144122878, guid: 21db599333f886846a9194fad2201a00, type: 3}
+  - pieceSprite: {fileID: 362992331, guid: 21db599333f886846a9194fad2201a00, type: 3}

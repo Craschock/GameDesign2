@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4de563b2cd993f4b817a294f7d0ec6c, type: 3}
+  m_Name: SO_PicturePuzzle_NightDrive
+  m_EditorClassIdentifier: Assembly-CSharp::PicturePuzzleSO
+  scrambleSeed: 42
+  cellSize: {x: 300, y: 200}
+  columns: 4
+  pieces:
+  - pieceSprite: {fileID: -2073246321, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}
+  - pieceSprite: {fileID: -127047369, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}
+  - pieceSprite: {fileID: 1975485428, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}
+  - pieceSprite: {fileID: 1960587559, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}
+  - pieceSprite: {fileID: -399943661, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}
+  - pieceSprite: {fileID: -41489323, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}
+  - pieceSprite: {fileID: -1819234464, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}
+  - pieceSprite: {fileID: 743781336, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}
+  - pieceSprite: {fileID: 1798361772, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}
+  - pieceSprite: {fileID: 1439736873, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}
+  - pieceSprite: {fileID: 217490523, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}
+  - pieceSprite: {fileID: -2068132645, guid: d5873cbe0d76dfb489e63fd46047f744, type: 3}

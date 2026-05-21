@@ -26,13 +26,13 @@ public class LookComponent : MonoBehaviour
     private void OnEnable()  // Enable Input
     {
         if (lookAction != null) lookAction.action.Enable();
-        DementiaBookManager.OnUIStateChanged += HandleUIStateChange;
+        UIManager.OnAnyUIStateChanged += HandleUIStateChange;
     }
 
     private void OnDisable()  // Disable Input
     {
         if (lookAction != null) lookAction.action.Disable();
-        DementiaBookManager.OnUIStateChanged -= HandleUIStateChange;
+        UIManager.OnAnyUIStateChanged -= HandleUIStateChange;
     }
 
     private void Update()

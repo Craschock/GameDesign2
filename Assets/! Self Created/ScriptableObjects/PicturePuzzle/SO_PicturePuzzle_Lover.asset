@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4de563b2cd993f4b817a294f7d0ec6c, type: 3}
+  m_Name: SO_PicturePuzzle_Lover
+  m_EditorClassIdentifier: Assembly-CSharp::PicturePuzzleSO
+  scrambleSeed: 42
+  cellSize: {x: 300, y: 200}
+  columns: 3
+  pieces:
+  - pieceSprite: {fileID: 299771509, guid: 629b85a984c065a48aa9e56dd76e07e3, type: 3}
+  - pieceSprite: {fileID: 560451528, guid: 629b85a984c065a48aa9e56dd76e07e3, type: 3}
+  - pieceSprite: {fileID: 1481684921, guid: 629b85a984c065a48aa9e56dd76e07e3, type: 3}
+  - pieceSprite: {fileID: 474793811, guid: 629b85a984c065a48aa9e56dd76e07e3, type: 3}
+  - pieceSprite: {fileID: -1741801126, guid: 629b85a984c065a48aa9e56dd76e07e3, type: 3}
+  - pieceSprite: {fileID: -1342017921, guid: 629b85a984c065a48aa9e56dd76e07e3, type: 3}
+  - pieceSprite: {fileID: -1324148009, guid: 629b85a984c065a48aa9e56dd76e07e3, type: 3}
+  - pieceSprite: {fileID: 1317478171, guid: 629b85a984c065a48aa9e56dd76e07e3, type: 3}
+  - pieceSprite: {fileID: 1209743641, guid: 629b85a984c065a48aa9e56dd76e07e3, type: 3}
