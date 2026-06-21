@@ -41,6 +41,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Lane0",
+                    "type": "Button",
+                    "id": "206082b4-61e6-4cb2-aad4-247281a50a6b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Lane1",
+                    "type": "Button",
+                    "id": "49a35515-86b2-45b3-8419-02701ab2870c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Lane2",
+                    "type": "Button",
+                    "id": "0a15b602-f9e2-4beb-af9b-7b3319f024e2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Lane3",
+                    "type": "Button",
+                    "id": "9a34d89c-cb1f-40fe-9ab5-73c82461c1fe",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -129,6 +165,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Open Book",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff2756b3-2c8c-4d43-873d-fc8fe168f12c",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane0",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7627a97f-6e49-42b9-b0ae-4845c9ec0f7b",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bae70b5b-d645-4e27-a21b-a8ae42346c75",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "663e0d8d-c2b4-4b88-a716-a0fed8588e23",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lane3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

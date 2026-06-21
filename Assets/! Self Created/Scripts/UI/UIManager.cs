@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
 
     private int _openUIWindows = 0;
 
+    public bool IsAnyUIOpen => _openUIWindows > 0;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
