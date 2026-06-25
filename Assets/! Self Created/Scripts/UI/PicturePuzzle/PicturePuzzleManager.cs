@@ -17,6 +17,11 @@ public class PicturePuzzleManager : MonoBehaviour
     [Header("Input Bindings")]
     [SerializeField] private InputActionReference closeAction;
 
+    [Header("Frame Settings")]
+    [SerializeField] private RectTransform puzzleFrame;
+
+    [SerializeField] private float frameThickness = 40f;
+
     private PuzzlePieceUI _firstSelectedPiece;
     private List<PuzzlePieceUI> _allPieces = new List<PuzzlePieceUI>();
 
@@ -99,6 +104,17 @@ public class PicturePuzzleManager : MonoBehaviour
         puzzleGrid.constraintCount = _currentPuzzle.columns;
 
         int totalPieces = _currentPuzzle.pieces.Length;
+
+        int columns = _currentPuzzle.columns;
+        int rows = Mathf.CeilToInt((float)totalPieces / columns);
+
+        float totalWidth = (columns * _currentPuzzle.cellSize.x) + (puzzleGrid.spacing.x * (columns - 1));
+        float totalHeight = (rows * _currentPuzzle.cellSize.y) + (puzzleGrid.spacing.y * (rows - 1));
+
+        if (puzzleFrame != null)
+        {
+            puzzleFrame.sizeDelta = new Vector2(totalWidth + frameThickness, totalHeight + frameThickness);
+        }
 
         // Initialize random state
         Random.InitState(_currentPuzzle.scrambleSeed);

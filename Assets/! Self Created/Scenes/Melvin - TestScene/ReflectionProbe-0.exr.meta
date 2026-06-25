@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: 4edce7549e2c05d4c94891f6c6aa1a8a
-AssetOrigin:
-  serializedVersion: 1
-  productId: 13213
-  packageName: Yughues Free Wooden Floor Materials
-  packageVersion: 1.1
-  assetPath: Assets/YughuesFreeFlooringMaterials/Textures/T_YFFlM_03_d.tga
-  uploadId: 743679
+guid: 93cf84a9c524b6b4e9184f87ee8c5543
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,18 +28,18 @@ TextureImporter:
   ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
-  cubemapConvolution: 0
-  seamlessCubemap: 0
+  cubemapConvolution: 1
+  seamlessCubemap: 1
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
     filterMode: 2
-    aniso: 16
+    aniso: 0
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
@@ -58,11 +51,11 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 0
+  alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 0
-  textureShape: 1
+  textureShape: 2
   singleChannelComponent: 0
   flipbookRows: 1
   flipbookColumns: 1
@@ -76,11 +69,11 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 50
+    compressionQuality: 100
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0

@@ -97,7 +97,7 @@ public class GuitarMiniGameManager : MonoBehaviour
             GuitarNoteUI note = _activeNotes[i];
             note.UpdatePosition(_songTimer);
 
-            if (_songTimer - note.HitTime > _currentSong.hitTolerance)
+            if (_songTimer - note.HitTime > 1.5f)
             {
                 Destroy(note.gameObject);
                 _activeNotes.RemoveAt(i);
@@ -119,7 +119,8 @@ public class GuitarMiniGameManager : MonoBehaviour
         _nextNoteIndex = 0;
         _isPlaying = true;
 
-        _spawnLeadTime = Mathf.Abs(spawnLine.anchoredPosition.y - hitZones[0].anchoredPosition.y) / _currentSong.noteSpeed;
+        float physicalDistance = Vector3.Distance(spawnLine.position, hitZones[0].position);
+        _spawnLeadTime = physicalDistance / _currentSong.noteSpeed;
 
         guitarUIPanel.SetActive(true);
         UIManager.Instance.RegisterUIOpen();
@@ -153,10 +154,13 @@ public class GuitarMiniGameManager : MonoBehaviour
         GameObject noteObj = Instantiate(notePrefab, notesContainer);
         GuitarNoteUI noteUI = noteObj.GetComponent<GuitarNoteUI>();
 
-        RectTransform hitZone = hitZones[data.laneIndex];
-        noteObj.GetComponent<RectTransform>().anchoredPosition = new Vector2(hitZone.anchoredPosition.x, spawnLine.anchoredPosition.y);
+        Transform targetHitZone = hitZones[(int)data.lane];
 
-        noteUI.Initialize(data.laneIndex, data.hitTime, spawnLine.anchoredPosition.y, hitZone.anchoredPosition.y, _currentSong.noteSpeed);
+        Vector3 startWorldPos = new Vector3(targetHitZone.position.x, spawnLine.position.y, targetHitZone.position.z);
+        Vector3 endWorldPos = targetHitZone.position;
+
+        noteUI.Initialize((int)data.lane, data.hitTime, _songTimer, startWorldPos, endWorldPos);
+
         _activeNotes.Add(noteUI);
     }
 

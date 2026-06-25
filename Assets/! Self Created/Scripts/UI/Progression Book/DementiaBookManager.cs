@@ -11,6 +11,15 @@ public class DementiaBookManager : MonoBehaviour
     [Header("Book Data")]
     [SerializeField] private List<MemoryFragmentSO> allPages;
 
+    [Header("Page Containers")]
+    [Tooltip("Parent object for the custom first pages (About Me).")]
+    [SerializeField] private GameObject aboutMeContainer;
+    [Tooltip("Parent object for the standard memory layout.")]
+    [SerializeField] private GameObject memoryContainer;
+
+    [Header("Book Settings")]
+    [Tooltip("How many pages are reserved at the start before memories begin. (Must be an even number)")]
+    [SerializeField] private int reservedStartPages = 2;
 
     [Header("UI References")]
     [SerializeField] private GameObject bookUIPanel;
@@ -27,9 +36,10 @@ public class DementiaBookManager : MonoBehaviour
     [SerializeField] private Image rightMemoryImage;
 
     [Header("String Text")]
-    [Tooltip("Text für titel, der versteckt ist")]
+    [Tooltip("Text für Titel, der versteckt ist")]
     [SerializeField] public string hiddenTitle = "???";
-    [Tooltip("Text für inhalt, der versteckt ist")]
+
+    [Tooltip("Text für Inhalt, der versteckt ist")]
     [SerializeField] public string hiddenContent = "I can't remember this...";
 
     private int _currentPageIndex = 0;
@@ -40,7 +50,6 @@ public class DementiaBookManager : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton setup
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
@@ -70,58 +79,64 @@ public class DementiaBookManager : MonoBehaviour
 
     private void ToggleBook(InputAction.CallbackContext context)
     {
+
+        if (!_isBookOpen && UIManager.Instance.IsAnyUIOpen) return;
+
         _isBookOpen = !_isBookOpen;
         OnUIStateChanged?.Invoke(_isBookOpen);
         bookUIPanel.SetActive(_isBookOpen);
 
         if (_isBookOpen)
         {
-            // Pause game and unlock cursor
             UIManager.Instance.RegisterUIOpen();
             UpdatePageDisplay();
         }
         else
         {
-            // Resume game and lock cursor
             UIManager.Instance.RegisterUIClose();
         }
     }
 
-    // Call from UI Buttons to flip pages
     public void ChangePage(int direction)
     {
         _currentPageIndex += (direction * 2);
 
-        // Calculate maximum index for LEFT page
-        int maxLeftIndex = allPages.Count - 1;
+        int maxLeftIndex = allPages.Count - 1 + reservedStartPages;
         if (maxLeftIndex % 2 != 0) maxLeftIndex -= 1;
 
-        // Clamp index
         _currentPageIndex = Mathf.Clamp(_currentPageIndex, 0, Mathf.Max(0, maxLeftIndex));
-      
+
         UpdatePageDisplay();
     }
 
     public void UpdatePageDisplay()
     {
-        if (allPages.Count == 0) return;
-
-        // Set Left Page
-        UpdateSinglePage(leftTitleText, leftContentText, leftMemoryImage, _currentPageIndex);
-
-        // Set Right Page
-        if (_currentPageIndex + 1 < allPages.Count)
+        if (_currentPageIndex < reservedStartPages)
         {
-            UpdateSinglePage(rightTitleText, rightContentText, rightMemoryImage, _currentPageIndex + 1);
+            if (aboutMeContainer != null) aboutMeContainer.SetActive(true);
+            if (memoryContainer != null) memoryContainer.SetActive(false);
         }
         else
         {
-            ClearPageUI(rightTitleText, rightContentText, rightMemoryImage);
+            if (aboutMeContainer != null) aboutMeContainer.SetActive(false);
+            if (memoryContainer != null) memoryContainer.SetActive(true);
+
+            if (allPages.Count == 0) return;
+
+            int memoryIndex = _currentPageIndex - reservedStartPages;
+
+            if (memoryIndex < allPages.Count)
+                UpdateSinglePage(leftTitleText, leftContentText, leftMemoryImage, memoryIndex);
+            else
+                ClearPageUI(leftTitleText, leftContentText, leftMemoryImage);
+
+            if (memoryIndex + 1 < allPages.Count)
+                UpdateSinglePage(rightTitleText, rightContentText, rightMemoryImage, memoryIndex + 1);
+            else
+                ClearPageUI(rightTitleText, rightContentText, rightMemoryImage);
         }
     }
 
-
-    // Just to actually "draw" page visiblr
     private void UpdateSinglePage(TextMeshProUGUI titleUI, TextMeshProUGUI contentUI, Image imageUI, int index)
     {
         MemoryFragmentSO page = allPages[index];
@@ -142,7 +157,6 @@ public class DementiaBookManager : MonoBehaviour
         }
     }
 
-    // Just to clear page
     private void ClearPageUI(TextMeshProUGUI titleUI, TextMeshProUGUI contentUI, Image imageUI)
     {
         titleUI.text = "";

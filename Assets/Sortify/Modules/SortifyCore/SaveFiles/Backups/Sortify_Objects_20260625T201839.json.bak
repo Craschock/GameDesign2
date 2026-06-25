@@ -19,15 +19,11 @@
                     "colorValue": "BF4040FF"
                 },
                 {
-                    "objID": "Melvin - TestScene_UI_9",
+                    "objID": "Melvin - TestScene_UI_10",
                     "colorValue": "CC9933FF"
                 },
                 {
-                    "objID": "Melvin - TestScene_Geometry_12",
-                    "colorValue": "4CB5FFFF"
-                },
-                {
-                    "objID": "Melvin - TestScene_Interactables_5",
+                    "objID": "Melvin - TestScene_Interactables_4",
                     "colorValue": "8000FFFF"
                 },
                 {
@@ -41,15 +37,7 @@
                     "styleType": 1
                 },
                 {
-                    "objID": "Melvin - TestScene_UI_10",
-                    "styleType": 0
-                },
-                {
-                    "objID": "Melvin - TestScene_Geometry_12",
-                    "styleType": 1
-                },
-                {
-                    "objID": "Melvin - TestScene_Interactables_5",
+                    "objID": "Melvin - TestScene_Interactables_4",
                     "styleType": 1
                 },
                 {
@@ -57,7 +45,7 @@
                     "styleType": 1
                 },
                 {
-                    "objID": "Melvin - TestScene_UI_9",
+                    "objID": "Melvin - TestScene_UI_10",
                     "styleType": 1
                 }
             ],

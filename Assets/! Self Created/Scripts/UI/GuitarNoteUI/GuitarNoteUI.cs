@@ -2,41 +2,30 @@ using UnityEngine;
 
 public class GuitarNoteUI : MonoBehaviour
 {
-    private RectTransform _rectTransform;
     private float _hitTime;
-    private float _spawnY;
-    private float _hitY;
-    private float _speed;
+    private float _spawnTime;
+    private Vector3 _startPos;
+    private Vector3 _endPos;
     private int _lane;
 
     public float HitTime => _hitTime;
     public int Lane => _lane;
 
-    private void Awake()
-    {
-        _rectTransform = GetComponent<RectTransform>();
-    }
-
-    public void Initialize(int lane, float hitTime, float spawnY, float hitY, float speed)
+    public void Initialize(int lane, float hitTime, float spawnTime, Vector3 startPos, Vector3 endPos)
     {
         _lane = lane;
         _hitTime = hitTime;
-        _spawnY = spawnY;
-        _hitY = hitY;
-        _speed = speed;
+        _spawnTime = spawnTime;
+        _startPos = startPos;
+        _endPos = endPos;
 
-        Vector2 pos = _rectTransform.anchoredPosition;
-        pos.y = _spawnY;
-        _rectTransform.anchoredPosition = pos;
+        transform.position = _startPos;
     }
 
     public void UpdatePosition(float currentTime)
     {
-        float timeDifference = _hitTime - currentTime;
-        float distance = timeDifference * _speed;
+        float progress = (currentTime - _spawnTime) / (_hitTime - _spawnTime);
 
-        Vector2 pos = _rectTransform.anchoredPosition;
-        pos.y = _hitY + distance;
-        _rectTransform.anchoredPosition = pos;
+        transform.position = Vector3.LerpUnclamped(_startPos, _endPos, progress);
     }
 }

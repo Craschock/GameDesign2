@@ -10,8 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88770490834fc794294cc02a65ed7eb4, type: 3}
-  m_Name: SO_GuitarSong
+  m_Name: SO_GuitarSongTest
   m_EditorClassIdentifier: Assembly-CSharp::GuitarSongSO
-  noteSpeed: 500
-  hitTolerance: 0.15
-  notes: []
+  noteSpeed: 250
+  hitTolerance: 0.4
+  notes:
+  - lane: 0
+    hitTime: 4
+  - lane: 1
+    hitTime: 5
+  - lane: 2
+    hitTime: 6
+  - lane: 3
+    hitTime: 8
+  - lane: 0
+    hitTime: 10
+  - lane: 1
+    hitTime: 12
+  - lane: 2
+    hitTime: 14
+  - lane: 3
+    hitTime: 16
+  - lane: 0
+    hitTime: 18
+  - lane: 1
+    hitTime: 19
+  - lane: 2
+    hitTime: 16
+  - lane: 3
+    hitTime: 8

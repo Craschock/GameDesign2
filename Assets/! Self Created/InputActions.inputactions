@@ -77,6 +77,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CloseUI",
+                    "type": "Button",
+                    "id": "2ee44bf0-e8b5-43b6-8143-e5524acb97fb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -137,8 +146,30 @@
                 },
                 {
                     "name": "",
+                    "id": "35732e66-45ed-4d62-a309-b96b1737c37e",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7be42c3e-1395-4d16-b160-b3b74a7ae379",
                     "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e35edf0-ad64-4952-9e35-f18325a9c9e2",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -171,7 +202,7 @@
                 {
                     "name": "",
                     "id": "ff2756b3-2c8c-4d43-873d-fc8fe168f12c",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -182,7 +213,7 @@
                 {
                     "name": "",
                     "id": "7627a97f-6e49-42b9-b0ae-4845c9ec0f7b",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -193,7 +224,7 @@
                 {
                     "name": "",
                     "id": "bae70b5b-d645-4e27-a21b-a8ae42346c75",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -204,11 +235,22 @@
                 {
                     "name": "",
                     "id": "663e0d8d-c2b4-4b88-a716-a0fed8588e23",
-                    "path": "<Keyboard>/r",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Lane3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5341b502-7b33-430e-a130-092c2c461ed5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CloseUI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
